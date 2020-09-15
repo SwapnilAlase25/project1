@@ -7,21 +7,30 @@ node {
         if(params.build_stage == true){
             stage('Building') {
                 echo "Building project1 files"
+                error "build error"
             }
         }
     }catch(e){
      echo "Build Failed!"   
     } 
     
-    if(params.test_stage == true){
-    stage('Testing') {
-            echo "Testing project1 files" 
+    try{
+        if(params.test_stage == true){
+        stage('Testing') {
+                echo "Testing project1 files" 
+            }
         }
+    }catch(e){
+     echo "Testing Failed!"   
     }
     
-    if(params.deloy_stage == true){
-    stage('Depolying') {
-             echo "Deploying project1 files" 
+    try{
+        if(params.deloy_stage == true){
+        stage('Depolying') {
+                 echo "Deploying project1 files" 
+            }
         }
+     }catch(e){
+     echo "Deloying Failed!"   
     }
  }
