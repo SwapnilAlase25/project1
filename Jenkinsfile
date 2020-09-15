@@ -2,6 +2,7 @@ properties([parameters([booleanParam(defaultValue: true, description: '', name: 
 
 
 node {
+    
     try{
         if(params.build_stage == true){
             stage('Building') {
@@ -10,7 +11,8 @@ node {
         }
     }catch(e){
      echo "Build Failed!"   
-    }    
+    } 
+    
     if(params.test_stage == true){
     stage('Testing') {
             echo "Testing project1 files" 
