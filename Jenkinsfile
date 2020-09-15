@@ -1,4 +1,4 @@
-properties([parameters([booleanParam(defaultValue: true, description: '', name: 'build_stage'), booleanParam(defaultValue: true, description: '', name: 'test_stage'), booleanParam(defaultValue: true, description: '', name: 'deloy_stage')]), pipelineTriggers([upstream('seed_repo, ')])])
+properties([parameters([booleanParam(defaultValue: true, description: '', name: 'build_stage'), booleanParam(defaultValue: true, description: '', name: 'test_stage'), booleanParam(defaultValue: true, description: '', name: 'deloy_stage')]), pipelineTriggers([upstream('seed_repo, '),cron('H * * * *')])])
 
 
 node {
