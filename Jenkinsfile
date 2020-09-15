@@ -7,8 +7,7 @@ node {
         if(params.build_stage == true){
             stage('Building') {
                 echo "Building project1 files"
-                error "build error"
-            }
+             }
         }
     }catch(e){
      echo "Build Failed!"   
